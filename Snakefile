@@ -11,7 +11,7 @@ rule all:
 rule humann:
     input:
         #file=expand("test/{sample}.fastq.gz", sample=config["samples"])
-        "test/{base}.fastq.gz"
+        "test/{sample}.fastq.gz"
     output:
         "test/snakemake_test"
     threads: 1
