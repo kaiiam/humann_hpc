@@ -17,5 +17,5 @@ rule humann:
     threads: 1
     shell:
         """
-        humann -i {input.file} -o {output}
+        humann -i {input} -o {output}
         """
