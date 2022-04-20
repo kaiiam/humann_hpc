@@ -1,0 +1,17 @@
+samples:
+    test1: "test/test1"
+    test2: "test/test2"
+    #ERR771001_2: "data/ERR771001_2"
+    #SRR4831664: "data/SRR4831664"
+    #SRR1796116_1: "data/SRR1796116_1"
+
+run_settings:
+    local_run: "false"
+    cluster_config: "config/cluster.yml"
+    scheduler: "sbatch"
+
+snakemake:
+    threads_small: 4
+    mem_small: 20000
+    threads_big: 15
+    mem_big: 75000
