@@ -19,4 +19,4 @@ snakemake --unlock
 echo 'snakemake --cluster "sbatch -A {cluster.group} -p {cluster.partition} -n {cluster.n} -t {cluster.time} -N {cluster.N} --mem={cluster.m} --ntasks={cluster.ntasks} --mem-per-cpu={cluster.mpc} -e {cluster.e} -o {cluster.o}"  --cluster-config config/cluster.yml -j 3 --latency-wait 30'
 
 #run in cluster
-snakemake --cluster "sbatch -A {cluster.group} -p {cluster.partition} -n {cluster.n} -t {cluster.time} -N {cluster.N} --mem={cluster.m} --ntasks={cluster.ntasks} --mem-per-cpu={cluster.mpc} -e {cluster.e} -o {cluster.o}"  --cluster-config config/cluster.yml -j 3 --latency-wait 30
+snakemake --cluster "sbatch -A {cluster.group} -p {cluster.partition} -n {cluster.n} -t {cluster.time} -N {cluster.N} --ntasks={cluster.ntasks} --mem-per-cpu={cluster.mpc} -e {cluster.e} -o {cluster.o}"  --cluster-config config/cluster.yml -j 3 --latency-wait 30
