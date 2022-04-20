@@ -4,6 +4,9 @@ mem_small=config["snakemake"]["mem_small"]
 threads_big=config["snakemake"]["threads_big"]
 mem_big=config["snakemake"]["mem_big"]
 
+wildcard_constraints:
+    chunk="\d+"
+
 rule all:
     input:
         expand("test/{sample}.fastq.gz", sample=config["samples"])
