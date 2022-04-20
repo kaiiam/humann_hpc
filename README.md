@@ -48,3 +48,12 @@ humann_databases --download utility_mapping full .
 source activate humann_kai #in case this wasn't called
 conda install -c bioconda snakemake
 ```
+
+## Run
+
+Make sure to modify the list of samples in `config/config.yml`
+
+From `/xdisk/bhurwitz/mig2020/rsgrps/bhurwitz/kai/humann_hpc`
+```
+sh submit_snakemake.sh
+```
