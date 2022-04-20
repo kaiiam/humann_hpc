@@ -42,3 +42,9 @@ humann_databases --download chocophlan full .
 humann_databases --download uniref uniref90_diamond .
 humann_databases --download utility_mapping full .
 ```
+
+## Install snakemake
+```
+source activate humann_kai #in case this wasn't called
+conda install -c bioconda snakemake
+```
