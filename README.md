@@ -2,7 +2,7 @@
 
 Based on the original version available from https://github.com/biobakery/humann, and the concise [docs for installation](https://huttenhower.sph.harvard.edu/humann). Also see [Alise Ponsero's version](https://github.com/aponsero/Humann_annotation_HPC).
 
-## Steps to Intall Humann
+## Steps to Install Humann
 
 Done on the University of Arizona HPC running linux with SLURM.
 
