@@ -16,4 +16,4 @@
 
 source activate humann_kai
 
-humann -i test.fastq.gz -o slurm1_results
+humann -i test1.fastq.gz -o slurm1_results
