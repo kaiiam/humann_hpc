@@ -4,9 +4,14 @@ mem_small=config["snakemake"]["mem_small"]
 threads_big=config["snakemake"]["threads_big"]
 mem_big=config["snakemake"]["mem_big"]
 
+rule all:
+    input:
+        expand("test/{sample}.fastq.gz", sample=config["samples"])
+
 rule humann:
     input:
-        file=expand("test/{sample}.fastq.gz", sample=config["samples"])
+        #file=expand("test/{sample}.fastq.gz", sample=config["samples"])
+        "test/{base}.fastq.gz"
     output:
         "test/snakemake_test"
     threads: 1
