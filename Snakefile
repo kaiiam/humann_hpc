@@ -4,7 +4,7 @@ mem_small=config["snakemake"]["mem_small"]
 threads_big=config["snakemake"]["threads_big"]
 mem_big=config["snakemake"]["mem_big"]
 
-rule stop_server:
+rule humann:
     input:
         file=expand("test/{sample}.fastq.gz", sample=config["samples"])
     output:
