@@ -8,7 +8,6 @@
 #SBATCH --partition=standard
 ### REQUIRED. Set the number of cores that will be used for this job.
 #SBATCH --nodes=1
-#SBATCH --ntasks=94
 ### REQUIRED. Set the memory required for this job.
 #SBATCH --mem-per-cpu=5gb
 ### REQUIRED. Specify the time required for this job, hhh:mm:ss
