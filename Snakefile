@@ -10,8 +10,6 @@ rule humann:
     output:
         "test/snakemake_test"
     threads: 1
-    resources:
-        mem_mb=4000
     shell:
         """
         humann -i {input.file} -o {output}
