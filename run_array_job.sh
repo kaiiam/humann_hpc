@@ -14,4 +14,4 @@ export NUM_JOB=$(wc -l < "config/list.txt")
 # submit co_assemblies
 echo "launching scripts/job_array_test.sh as a job."
 
-JOB_ID=`sbatch --job-name humann -a 1-$NUM_JOB job_array_test.sh`
+JOB_ID=`sbatch --job-name humann -a 1-$NUM_JOB job_array.sh`
