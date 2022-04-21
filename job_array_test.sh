@@ -10,7 +10,7 @@
 #SBATCH --mem-per-cpu=5gb
 
 # load environment
-source activate humann
+source activate humann_kai
 
 # echo for log
 echo "job started"; hostname; date
@@ -19,5 +19,5 @@ echo "job started"; hostname; date
 export SMPLE=`head -n +${SLURM_ARRAY_TASK_ID} config/list.txt | tail -n 1`
 echo $SMPLE
 
-# #run humann
-# humann --input input/$SMPLE --output results
+#run humann
+humann --input input/$SMPLE --output results
