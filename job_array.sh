@@ -17,8 +17,10 @@ echo "job started"; hostname; date
 export SMPLE=`head -n +${SLURM_ARRAY_TASK_ID} config/list.txt | tail -n 1`
 echo $SMPLE
 
-#run humann
-#humann --input input/$SMPLE --output results
+INPUT_DIR=../../heidi/karnes_metagenomes/
 
-# Test run humann
-humann --input test/$SMPLE --output test_results
+run humann
+humann --input $INPUT_DIR/$SMPLE --output results
+
+# # Test run humann
+# humann --input test/$SMPLE --output test_results
