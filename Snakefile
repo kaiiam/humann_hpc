@@ -1,8 +1,3 @@
-import sys
-
-# accept command line arguments
-inputArg1 = sys.argv[1]
-
 configfile: "config/config.yml"
 threads_small=config["snakemake"]["threads_small"]
 mem_small=config["snakemake"]["mem_small"]
@@ -12,16 +7,14 @@ mem_big=config["snakemake"]["mem_big"]
 wildcard_constraints:
     chunk="\d+"
 
-# rule all:
-#     input:
-#         expand("test/{sample}.fastq.gz", sample=config["samples"])
+rule all:
+    input:
+        expand("test/{sample}.fastq.gz", sample=config["samples"])
 
 rule humann:
     input:
         #file=expand("test/{sample}.fastq.gz", sample=config["samples"])
-        #"test/{sample}.fastq.gz"
-        #"test/{inputArg1}.fastq.gz"
-        inputArg1
+        "test/{sample}.fastq.gz"
     output:
         "test/snakemake_test"
     threads: 1
