@@ -19,13 +19,21 @@ echo $SMPLE
 
 INPUT_DIR="test/"
 
+# Step 1
+
 mkdir bowtie/
 
-# add bowtie2 use unpaired option
-bowtie2 -p 8 -x database/GRCh38_noalt_as/GRCh38_noalt_as -U $INPUT_DIR/$SMPLE --un-gz bowtie/$SMPLE
+# # add bowtie2 use unpaired option
+# bowtie2 -p 8 -x database/GRCh38_noalt_as/GRCh38_noalt_as -U $INPUT_DIR/$SMPLE --un-gz bowtie/$SMPLE
 
-# # add trimgalore use unpaired option
-# trim_galore -o trimgalore/$SMPLE --fastqc bowtie/$SMPLE
+# Step 2
+
+mkdir trimgalore/
+
+# add trimgalore using unpaired option
+trim_galore -o trimgalore/$SMPLE --fastqc bowtie/$SMPLE
+
+# Step 3
 
 # # run humann
 # humann --input $INPUT_DIR/$SMPLE --output test_results
