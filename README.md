@@ -28,6 +28,13 @@ pip install humann --no-binary :all:
 conda install -c bioconda metaphlan
 # fix libtbb2 for bowtie2
 conda install tbb=2020.2
+
+# install bowtie2 #might not need this
+conda install -c bioconda bowtie2
+
+# install trim-galore
+conda install -c bioconda trim-galore
+
 ```
 
 ## Install databases
@@ -37,10 +44,15 @@ conda install tbb=2020.2
 mkdir database
 cd database/
 
-#install chocophlan
+#install humann databases: chocophlan uniref and human util
 humann_databases --download chocophlan full .
 humann_databases --download uniref uniref90_diamond .
 humann_databases --download utility_mapping full .
+
+#Download Human genome for bowtie2
+wget https://genome-idx.s3.amazonaws.com/bt/GRCh38_noalt_as.zip
+unzip GRCh38_noalt_as.zip
+
 ```
 
 
