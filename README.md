@@ -53,8 +53,15 @@ From `/xdisk/bhurwitz/mig2020/rsgrps/bhurwitz/kai/humann_hpc`
 ```
 sh submit_snakemake.sh #this isn't working try instead:
 ./run_array_job.sh
+
+Temp testing:
+./test_run_array_job.sh
 ```
 
+
+## Pipeline summary
+
+pipeline will be step 1) [bowtie2](https://github.com/BenLangmead/bowtie2) to remove human contamination step 2) [TrimGalore](https://github.com/FelixKrueger/TrimGalore) to do quality control (e.g. removing low quality reads and trimming adaptors) step 3) [humann](https://github.com/biobakery/humann) to get functional annotations using UNIREF90 which we’ll map to COG and taxonomic annotations using metaphlan
 
 ## Old
 
