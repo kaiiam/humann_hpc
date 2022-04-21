@@ -19,7 +19,7 @@ echo $SMPLE
 
 INPUT_DIR=../../heidi/karnes_metagenomes/
 
-run humann
+#run humann
 humann --input $INPUT_DIR/$SMPLE --output results
 
 # # Test run humann
