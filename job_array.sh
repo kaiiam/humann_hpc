@@ -19,12 +19,34 @@ echo $SMPLE
 
 INPUT_DIR="../../heidi/karnes_metagenomes/"
 
+# Step 1
+
+mkdir bowtie/
+
 # add bowtie2 use unpaired option
+bowtie2 -p 8 -x database/GRCh38_noalt_as/GRCh38_noalt_as -U $INPUT_DIR/$SMPLE --un-gz bowtie/$SMPLE
 
-# add trimgalore use unpaired option 
+# Step 2
 
-#run humann
-humann --input $INPUT_DIR/$SMPLE --output results
+mkdir trimgalore/
 
-# # Test run humann
-# humann --input test/$SMPLE --output test_results
+# add trimgalore using unpaired option
+trim_galore -o trimgalore/$SMPLE --fastqc bowtie/$SMPLE
+
+# Step 3
+
+# run humann
+humann --input trimgalore/$SMPLE/*_trimmed.fq.gz --output test_humann_results
+
+
+
+
+# # add bowtie2 use unpaired option
+#
+# # add trimgalore use unpaired option
+#
+# #run humann
+# humann --input $INPUT_DIR/$SMPLE --output results
+#
+# # # Test run humann
+# # humann --input test/$SMPLE --output test_results
