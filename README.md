@@ -51,9 +51,10 @@ conda install -c bioconda snakemake
 
 ## Run
 
-Make sure to modify the list of samples in `config/config.yml`
+Make sure to modify the list of samples in `config/config.yml` and or `config/list.txt`
 
 From `/xdisk/bhurwitz/mig2020/rsgrps/bhurwitz/kai/humann_hpc`
 ```
-sh submit_snakemake.sh
+sh submit_snakemake.sh #this isn't working try instead:
+./run_array_job.sh
 ```
