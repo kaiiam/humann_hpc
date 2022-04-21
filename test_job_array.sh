@@ -35,5 +35,5 @@ trim_galore -o trimgalore/$SMPLE --fastqc bowtie/$SMPLE
 
 # Step 3
 
-# # run humann
-# humann --input $INPUT_DIR/$SMPLE --output test_results
+# run humann
+humann --input trimgalore/$SMPLE/*_trimmed.fq.gz --output test_humann_results
