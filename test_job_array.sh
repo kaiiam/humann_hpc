@@ -2,7 +2,7 @@
 #SBATCH --job-name=human_test
 #SBATCH --account=karnes
 #SBATCH --partition=standard
-#SBATCH --time=72:00:00
+#SBATCH --time=4:00:00
 #SBATCH --ntasks=94
 #SBATCH --nodes=1
 #SBATCH --mem-per-cpu=5gb
@@ -20,11 +20,9 @@ echo $SMPLE
 INPUT_DIR="test/"
 
 # add bowtie2 use unpaired option
+bowtie2 -p 8 -x database/GRCh38_noalt_as/GRCh38_noalt_as -U $INPUT_DIR/$SMPLE --un-gz bowtie/$SMPLE
 
 # add trimgalore use unpaired option
 
-#run humann
-humann --input $INPUT_DIR/$SMPLE --output test_results
-
-# # Test run humann
-# humann --input test/$SMPLE --output test_results
+# # run humann
+# humann --input $INPUT_DIR/$SMPLE --output test_results
