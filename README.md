@@ -43,11 +43,7 @@ humann_databases --download uniref uniref90_diamond .
 humann_databases --download utility_mapping full .
 ```
 
-## Install snakemake
-```
-source activate humann_kai #in case this wasn't called
-conda install -c bioconda snakemake
-```
+
 
 ## Run
 
@@ -57,4 +53,16 @@ From `/xdisk/bhurwitz/mig2020/rsgrps/bhurwitz/kai/humann_hpc`
 ```
 sh submit_snakemake.sh #this isn't working try instead:
 ./run_array_job.sh
+```
+
+
+## Old
+
+### Install snakemake
+
+Originally tried using snakemake but went with a SLURM batch array instead.
+
+```
+source activate humann_kai #in case this wasn't called
+conda install -c bioconda snakemake
 ```
