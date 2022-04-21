@@ -20,7 +20,8 @@ rule humann:
     input:
         #file=expand("test/{sample}.fastq.gz", sample=config["samples"])
         #"test/{sample}.fastq.gz"
-        "test/{inputArg1}.fastq.gz"
+        #"test/{inputArg1}.fastq.gz"
+        inputArg1
     output:
         "test/snakemake_test"
     threads: 1
