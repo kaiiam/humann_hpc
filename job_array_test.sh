@@ -1,11 +1,9 @@
 #!/bin/bash
 #SBATCH --job-name=human_test
 #SBATCH --account=bhurwitz
-#SBATCH --output=errout/outputr%j.txt
-#SBATCH --error=errout/errors_%j.txt
 #SBATCH --partition=standard
 #SBATCH --time=1:00:00
-#SBATCH --ntasks=20
+#SBATCH --ntasks=94
 #SBATCH --nodes=1
 #SBATCH --mem-per-cpu=5gb
 
