@@ -30,8 +30,8 @@ mkdir bowtie/
 
 mkdir trimgalore/
 
-# add trimgalore using unpaired option
-trim_galore -o trimgalore/$SMPLE --fastqc bowtie/$SMPLE
+# # add trimgalore using unpaired option
+# trim_galore -o trimgalore/$SMPLE --fastqc bowtie/$SMPLE
 
 # Step 3
 
