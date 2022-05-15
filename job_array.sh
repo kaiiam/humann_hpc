@@ -1,8 +1,8 @@
 #!/bin/bash
 #SBATCH --job-name=human_test
-#SBATCH --account=karnes
+#SBATCH --account=bhurwitz
 #SBATCH --partition=standard
-#SBATCH --time=72:00:00
+#SBATCH --time=2:00:00
 #SBATCH --ntasks=94
 #SBATCH --nodes=1
 #SBATCH --mem-per-cpu=5gb
@@ -19,34 +19,26 @@ echo $SMPLE
 
 INPUT_DIR="../../heidi/karnes_metagenomes/"
 
-# # Step 1
-#
-# mkdir bowtie/
-#
-# # add bowtie2 use unpaired option
-# bowtie2 -p 8 -x database/GRCh38_noalt_as/GRCh38_noalt_as -U $INPUT_DIR/$SMPLE --un-gz bowtie/$SMPLE
-#
-# # Step 2
-#
-# mkdir trimgalore/
-#
-# # add trimgalore using unpaired option
-# trim_galore -o trimgalore/$SMPLE --fastqc bowtie/$SMPLE
+# Step 1
+## subsamples files
+mkdir subsample/
+
+gunzip -c $INPUT_DIR/$SMPLE | head -n 1000 | gzip > subsample/$SMPLE
+
+# Step 2
+mkdir bowtie/
+
+# add bowtie2 use unpaired option
+bowtie2 -p 8 -x database/GRCh38_noalt_as/GRCh38_noalt_as -U subsample/$SMPLE --un-gz bowtie/$SMPLE
 
 # Step 3
 
+mkdir trimgalore/
+
+# add trimgalore using unpaired option
+trim_galore -o trimgalore/$SMPLE --fastqc bowtie/$SMPLE
+
+# Step 4
+
 # run humann
-humann --input trimgalore/$SMPLE/*_trimmed.fq.gz --output test_humann_results
-
-
-
-
-# # add bowtie2 use unpaired option
-#
-# # add trimgalore use unpaired option
-#
-# #run humann
-# humann --input $INPUT_DIR/$SMPLE --output results
-#
-# # # Test run humann
-# # humann --input test/$SMPLE --output test_results
+humann --input trimgalore/$SMPLE/*_trimmed.fq.gz --output humann_results
