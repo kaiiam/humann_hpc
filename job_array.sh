@@ -2,7 +2,7 @@
 #SBATCH --job-name=human_test
 #SBATCH --account=bhurwitz
 #SBATCH --partition=standard
-#SBATCH --time=2:00:00
+#SBATCH --time=72:00:00
 #SBATCH --ntasks=94
 #SBATCH --nodes=1
 #SBATCH --mem-per-cpu=5gb
@@ -23,7 +23,7 @@ INPUT_DIR="../../heidi/karnes_metagenomes/"
 ## subsamples files
 mkdir subsample/
 
-gunzip -c $INPUT_DIR/$SMPLE | head -n 1000 | gzip > subsample/$SMPLE
+gunzip -c $INPUT_DIR/$SMPLE | head -n 80000000 | gzip > subsample/$SMPLE
 
 # Step 2
 mkdir bowtie/
