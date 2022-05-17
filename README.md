@@ -59,14 +59,14 @@ unzip GRCh38_noalt_as.zip
 
 ## Run
 
-Make sure to modify the list of samples in `config/config.yml` and or `config/list.txt`
+Make sure to modify the list of samples in `config/list.txt`
 
 From `/xdisk/bhurwitz/mig2020/rsgrps/bhurwitz/kai/humann_hpc`
 ```
 sh submit_snakemake.sh #this isn't working try instead:
 ./run_array_job.sh
 
-Temp testing:
+Run for rarefaction curve:
 ./test_run_array_job.sh
 ```
 
