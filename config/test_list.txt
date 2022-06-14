@@ -1,7 +1,10 @@
-sample1_5M.fastq.gz
-sample1_10M.fastq.gz
-sample1_15M.fastq.gz
-sample1_20M.fastq.gz
-sample1_30M.fastq.gz
-sample1_40M.fastq.gz
-sample1_60M.fastq.gz
+#sample1_5M.fastq.gz
+#sample1_10M.fastq.gz
+#sample1_15M.fastq.gz
+#sample1_20M.fastq.gz
+#sample1_30M.fastq.gz
+#sample1_40M.fastq.gz
+#sample1_60M.fastq.gz
+sample1_80M.fastq.gz
+sample1_100M.fastq.gz
+sample1_140M.fastq.gz
