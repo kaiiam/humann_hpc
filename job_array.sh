@@ -1,6 +1,6 @@
 #!/bin/bash
 #SBATCH --job-name=human_test
-#SBATCH --account=bhurwitz
+#SBATCH --account=karnes
 #SBATCH --partition=standard
 #SBATCH --time=72:00:00
 #SBATCH --ntasks=94
