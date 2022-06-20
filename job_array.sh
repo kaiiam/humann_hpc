@@ -23,7 +23,7 @@ INPUT_DIR="../../heidi/karnes_metagenomes/"
 ## subsamples files
 mkdir subsample/
 
-gunzip -c $INPUT_DIR/$SMPLE | head -n 80000000 | gzip > subsample/$SMPLE
+gunzip -c $INPUT_DIR/$SMPLE | head -n 400000000 | gzip > subsample/$SMPLE
 
 # Step 2
 mkdir bowtie/
