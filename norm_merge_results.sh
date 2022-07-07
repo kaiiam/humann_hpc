@@ -1,9 +1,9 @@
 # load environment
 source activate humann_kai
 
-IN_DIR="/xdisk/bhurwitz/mig2020/rsgrps/bhurwitz/kai/humann_hpc/test_join"
+IN_DIR="/xdisk/bhurwitz/mig2020/rsgrps/bhurwitz/kai/humann_hpc/results_20_million/humann_results"
 
-OUT_DIR="/xdisk/bhurwitz/mig2020/rsgrps/bhurwitz/kai/humann_hpc/test_join/cpm_norm_path"
+OUT_DIR="/xdisk/bhurwitz/mig2020/rsgrps/bhurwitz/kai/humann_hpc/results_20_million/humann_results/cpm_norm_path"
 
 cd $IN_DIR
 mkdir $OUT_DIR
@@ -16,7 +16,7 @@ humann_split_stratified_table --input humann_pathabundance.tsv --output result_t
 mv humann_pathabundance.tsv result_tables
 
 
-OUT_DIR="/xdisk/bhurwitz/mig2020/rsgrps/bhurwitz/kai/humann_hpc/test_join/cpm_norm_KO"
+OUT_DIR="/xdisk/bhurwitz/mig2020/rsgrps/bhurwitz/kai/humann_hpc/results_20_million/humann_results/cpm_norm_KO"
 
 
 cd $IN_DIR
