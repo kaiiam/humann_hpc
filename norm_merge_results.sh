@@ -11,7 +11,7 @@ mkdir $OUT_DIR
 # merge table and stratify
 
 mkdir result_tables
-humann_join_tables --input $OUT_DIR --output humann_pathabundance.tsv --file_name cpm_WGS
+humann_join_tables --input $OUT_DIR --output humann_pathabundance.tsv --file_name cpm_Karnes
 humann_split_stratified_table --input humann_pathabundance.tsv --output result_tables
 mv humann_pathabundance.tsv result_tables
 
@@ -33,7 +33,7 @@ done
 
 # merge table and stratify
 
-humann_join_tables --input $OUT_DIR --output humann_KOabundance.tsv --file_name cpm_WGS
+humann_join_tables --input $OUT_DIR --output humann_KOabundance.tsv --file_name cpm_Karnes
 humann_split_stratified_table --input humann_KOabundance.tsv --output result_tables
 mv humann_KOabundance.tsv result_tables
 
