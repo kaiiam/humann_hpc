@@ -19,24 +19,24 @@ echo $SMPLE
 
 INPUT_DIR="../../heidi/karnes_metagenomes/"
 
-# # Step 1
-# ## subsamples files
-# mkdir subsample/
-#
-# gunzip -c $INPUT_DIR/$SMPLE | head -n 240000000 | gzip > subsample/$SMPLE
-#
-# # Step 2
-# mkdir bowtie/
-#
-# # add bowtie2 use unpaired option
-# bowtie2 -p 8 -x database/GRCh38_noalt_as/GRCh38_noalt_as -U subsample/$SMPLE --un-gz bowtie/$SMPLE
-#
-# # Step 3
-#
-# mkdir trimgalore/
-#
-# # add trimgalore using unpaired option
-# trim_galore -o trimgalore/$SMPLE --fastqc bowtie/$SMPLE
+# Step 1
+## subsamples files
+mkdir subsample/
+
+gunzip -c $INPUT_DIR/$SMPLE | head -n 240000000 | gzip > subsample/$SMPLE
+
+# Step 2
+mkdir bowtie/
+
+# add bowtie2 use unpaired option
+bowtie2 -p 8 -x database/GRCh38_noalt_as/GRCh38_noalt_as -U subsample/$SMPLE --un-gz bowtie/$SMPLE
+
+# Step 3
+
+mkdir trimgalore/
+
+# add trimgalore using unpaired option
+trim_galore -o trimgalore/$SMPLE --fastqc bowtie/$SMPLE
 
 # Step 4
 
